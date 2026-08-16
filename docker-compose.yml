@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  ctfile:
+    build: .
+    container_name: ctfile
+    ports:
+      - "5800:5800"
+      - "5900:5900"
+    volumes:
+      - "./config:/config:rw"
+    environment:
+      - USER_ID=0
+      - GROUP_ID=0
+      - TZ=Asia/Shanghai
+      - KEEP_APP_RUNNING=1
+      - ENABLE_CJK_FONT=1
+    restart: unless-stopped

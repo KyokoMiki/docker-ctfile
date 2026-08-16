@@ -1,0 +1,25 @@
+# Docker runtime data
+config/
+storage/
+
+# Docker temporary files
+*.log
+logs/
+
+# Editor and IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Build artifacts
+*.tar
+*.gz
+
+# Temp directory
+temp/

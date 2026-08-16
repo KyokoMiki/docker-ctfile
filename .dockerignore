@@ -1,0 +1,23 @@
+# Git files
+.git
+.gitignore
+
+# Documentation
+README.md
+LICENSE
+
+# Temp and test files
+temp/
+*.md
+.vscode/
+.idea/
+
+# Docker files
+docker-compose.yml
+.dockerignore
+
+# Runtime data
+config/
+storage/
+logs/
+*.log
