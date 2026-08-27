@@ -87,6 +87,9 @@ RUN apt-get update && \
 # Copy extracted AppImage from extractor stage
 COPY --from=extractor /opt/ctfile /opt/ctfile
 
+# Make application files readable by any user
+RUN chmod -R a+rX /opt/ctfile
+
 # Generate and install favicons.
 RUN \
     APP_ICON_URL=https://www.ctfile.com/img/logo.png && \
