@@ -14,11 +14,6 @@ chmod +x /opt/ctfile/AppRun 2>/dev/null || true
 chmod +x /opt/ctfile/ctfile 2>/dev/null || true
 chmod +x /opt/ctfile/ctfile-desktop 2>/dev/null || true
 
-# Prepare the D-Bus system bus runtime directory (writable by the app user)
-mkdir -p /run/dbus
-rm -f /run/dbus/pid /run/dbus/system_bus_socket
-chmod 1777 /run/dbus
-
 # Set AppImage environment
 export APPIMAGE_EXTRACT_AND_RUN=1
 

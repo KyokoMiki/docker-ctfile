@@ -8,10 +8,12 @@ export APPDIR=/opt/ctfile
 # Set DISPLAY for X server
 export DISPLAY=:0
 
-# Start the D-Bus system bus if it is not already running
-if [ ! -S /run/dbus/system_bus_socket ]; then
-    mkdir -p /run/dbus
-    rm -f /run/dbus/pid
+# Start the D-Bus system bus if it is not already running.
+# The socket lives under /tmp so it can be created without root privileges.
+export DBUS_SYSTEM_BUS_ADDRESS=unix:path=/tmp/dbus/system_bus_socket
+if [ ! -S /tmp/dbus/system_bus_socket ]; then
+    mkdir -p /tmp/dbus
+    rm -f /tmp/dbus/system_bus_socket
     dbus-daemon --config-file=/etc/dbus-1/system-ctfile.conf --fork || echo "Warning: failed to start D-Bus system bus"
 fi
 
