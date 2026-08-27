@@ -12,7 +12,7 @@ export DISPLAY=:0
 if [ ! -S /run/dbus/system_bus_socket ]; then
     mkdir -p /run/dbus
     rm -f /run/dbus/pid
-    dbus-daemon --system --fork || echo "Warning: failed to start D-Bus system bus"
+    dbus-daemon --config-file=/etc/dbus-1/system-ctfile.conf --fork || echo "Warning: failed to start D-Bus system bus"
 fi
 
 # Check if AppRun exists
