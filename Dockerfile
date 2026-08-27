@@ -65,8 +65,10 @@ RUN apt-get update && \
         libcairo2 \
         libcups2 \
         libdbus-1-3 \
+        libegl1 \
         libexpat1 \
         libgbm1 \
+        libgl1 \
         libglib2.0-0 \
         libgtk-3-0 \
         libnspr4 \
