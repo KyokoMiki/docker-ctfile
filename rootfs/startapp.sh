@@ -8,6 +8,13 @@ export APPDIR=/opt/ctfile
 # Set DISPLAY for X server
 export DISPLAY=:0
 
+# Start the D-Bus system bus if it is not already running
+if [ ! -S /run/dbus/system_bus_socket ]; then
+    mkdir -p /run/dbus
+    rm -f /run/dbus/pid
+    dbus-daemon --system --fork || echo "Warning: failed to start D-Bus system bus"
+fi
+
 # Check if AppRun exists
 if [ ! -f "$APPDIR/AppRun" ]; then
     echo "Error: AppRun not found in $APPDIR"

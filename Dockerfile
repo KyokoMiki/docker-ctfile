@@ -57,6 +57,7 @@ RUN echo 'Package: systemd\nPin: release *\nPin-Priority: -1' > /etc/apt/prefere
 # Install runtime dependencies for CTFile (only missing libraries from ldd output)
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
+        dbus \
         libasound2 \
         libatk-bridge2.0-0 \
         libatk1.0-0 \
